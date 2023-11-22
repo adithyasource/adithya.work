@@ -1,8 +1,20 @@
-# React + Vite
+# adithya.work - portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<table>
+<tbody>
+<tr>
+<td><a href="http://adithya.work/" target="_blank">> public website</a></td></tr>
+</tbody>
+</table>
 
-Currently, two official plugins are available:
+mac os inspired portfolio for video edits built in react.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+[![react](https://img.shields.io/badge/react-5ED3F3)](https://react.dev/) [![tailwind](https://img.shields.io/badge/tailwind-36B7F0)](https://tailwindcss.com/)
+[![netlify](https://img.shields.io/badge/netlify-24C1B1)](https://www.netlify.com/) [![figma](https://img.shields.io/badge/figma-9D56F7)](https://figma.com/)
+
+
+### Additional Tools
+* [React-Draggable](https://www.npmjs.com/package/react-draggable)
+* [html-react-parser](https://www.npmjs.com/package/html-react-parser)
+* [Basicons](https://basicons.xyz)
