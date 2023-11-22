@@ -66,26 +66,38 @@ export default function App() {
         <a
           href="https://discord.com/users/427117308880748544"
           target="_blank"
+          className="relative hover:scale-[103%] duration-100"
           rel="noreferrer noopener">
           <img
             src={discord}
             alt=""
             className="w-[64px] h-[64px] max-[1300px]:w-[48px] max-[1300px]:h-[48px]"
           />
+          <img
+            src={discord}
+            alt=""
+            className="w-[64px] h-[64px] max-[1300px]:w-[48px] max-[1300px]:h-[48px] absolute inset-0 blur-[50px] opacity-0 hover:opacity-50 duration-300"
+          />
         </a>
         <a
           href="https://www.instagram.com/sreeadithyap/"
           target="_blank"
+          className="relative hover:scale-[103%] duration-100"
           rel="noreferrer noopener">
           <img
             src={instagram}
             alt=""
             className="w-[64px] h-[64px] max-[1300px]:w-[48px] max-[1300px]:h-[48px]"
           />
+          <img
+            src={instagram}
+            alt=""
+            className="w-[64px] h-[64px] max-[1300px]:w-[48px] max-[1300px]:h-[48px] absolute inset-0 blur-[50px] opacity-0 hover:opacity-50 duration-300 "
+          />
         </a>
 
         <button
-          className="group relative"
+          className="group relative hover:scale-[103%] duration-100"
           onClick={() => {
             navigator.clipboard.writeText("me@adithya.work");
             setShowSuccessfulCopy(true);
@@ -109,25 +121,40 @@ export default function App() {
             alt=""
             className="w-[64px] h-[64px]  max-[1300px]:w-[48px] max-[1300px]:h-[48px]"
           />
+          <img
+            src={email}
+            alt=""
+            className="w-[64px] h-[64px]  max-[1300px]:w-[48px] max-[1300px]:h-[48px] absolute inset-0 blur-[50px] opacity-0 hover:opacity-50 duration-300"
+          />
         </button>
       </div>
 
       <div className="flex gap-28 absolute right-72 top-48 z-[-15] max-[1300px]:right-20">
         <button
-          className="flex flex-col items-center gap-2"
+          className="relative flex flex-col items-center gap-2 hover:scale-[103%] duration-100"
           onClick={() => {
             setShowPortfolio(true);
             setCurrentPortfolioTab("ads/mvs");
           }}>
-          <img src={files} alt="" className="h-28" />
+          <img src={files} alt="" className=" h-28" />
+          <img
+            src={files}
+            alt=""
+            className="absolute inset-0 blur-[50px] opacity-0 hover:opacity-30 duration-300 h-28"
+          />
           <p>portfolio</p>
         </button>
         <button
-          className="flex flex-col items-center gap-2"
+          className="relative flex flex-col items-center gap-2 hover:scale-[103%] duration-100"
           onClick={() => {
             setShowAbout(true);
           }}>
           <img src={page} alt="" className="h-28" />
+          <img
+            src={page}
+            alt=""
+            className="absolute inset-0 blur-[50px] opacity-0 hover:opacity-30 duration-300 h-28"
+          />
           <p>about</p>
         </button>
       </div>
@@ -185,9 +212,9 @@ export default function App() {
                 <button
                   className={`${
                     currentPortfolioTab == "ads/mvs"
-                      ? "bg-[#4c4c4ca4]"
-                      : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
+                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
+                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
                   onClick={() => {
                     setCurrentPortfolioTab("ads/mvs");
                   }}>
@@ -209,9 +236,9 @@ export default function App() {
                 <button
                   className={`${
                     currentPortfolioTab == "showreel"
-                      ? "bg-[#4c4c4ca4]"
-                      : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
+                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
+                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
                   onClick={() => {
                     setCurrentPortfolioTab("showreel");
                   }}>
@@ -232,9 +259,9 @@ export default function App() {
                 <button
                   className={`${
                     currentPortfolioTab == "misc"
-                      ? "bg-[#4c4c4ca4]"
-                      : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
+                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
+                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
                   onClick={() => {
                     setCurrentPortfolioTab("misc");
                   }}>
@@ -256,9 +283,9 @@ export default function App() {
                 <button
                   className={`${
                     currentPortfolioTab == "youtube"
-                      ? "bg-[#4c4c4ca4]"
-                      : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
+                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
+                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
                   onClick={() => {
                     setCurrentPortfolioTab("youtube");
                   }}>
