@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Draggable from "react-draggable";
 
 import wallpaper from "./assets/wallpaper.png";
 import discord from "./assets/discord.svg";
@@ -18,19 +19,18 @@ import image13 from "./assets/brandlogos/image 13.png";
 import image14 from "./assets/brandlogos/image 14.png";
 import image15 from "./assets/brandlogos/image 15.png";
 
-import Draggable from "react-draggable";
 import LinkedWork from "./components/LinkedWork";
 import EmbeddedWork from "./components/EmbeddedWork";
-import { useEffect } from "react";
 
 export default function App() {
   const [showPortfolio, setShowPortfolio] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
-  const [currentPortfolioTab, setCurrentPortfolioTab] = useState("ads/mvs");
   const [showSuccessfulCopy, setShowSuccessfulCopy] = useState(false);
 
   const [showGoldenAge, setShowGoldenAge] = useState(false);
   const [showContrast, setShowContrast] = useState(false);
+
+  const [currentPortfolioTab, setCurrentPortfolioTab] = useState("ads/mvs");
   const [currentWidth, setCurrentWidth] = useState(1300);
 
   document.addEventListener("keydown", (e) => {
@@ -131,152 +131,6 @@ export default function App() {
           <p>about</p>
         </button>
       </div>
-
-      {showGoldenAge ? (
-        <Draggable
-          handle=".handle"
-          disabled={currentWidth < 1300 ? true : false}>
-          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh] max-h-[80vh]    rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
-            <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
-              <div className="flex gap-2">
-                <button
-                  onClick={() => {
-                    setShowGoldenAge(false);
-                  }}>
-                  <svg
-                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FF6862" />
-                  </svg>
-                </button>
-
-                <button
-                  onClick={() => {
-                    setShowGoldenAge(false);
-                  }}>
-                  <svg
-                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FEBC2C" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => {
-                    setShowGoldenAge(false);
-                  }}>
-                  <svg
-                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7.5" cy="7.5" r="7.5" fill="#2CC740" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div className="overflow-y-scroll bg-[#1e1e1eda] backdrop-blur-[100px] p-4 flex flex-col gap-6">
-              <a
-                href="https://www.instagram.com/p/CsB_FmKpmnb/"
-                target="_blank"
-                rel="noreferrer noopener">
-                <img
-                  src="https://cdn.discordapp.com/attachments/752463623305297992/1176917791564124241/image05.jpg"
-                  alt=""
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/p/CsFiNsmAwnf/"
-                target="_blank"
-                rel="noreferrer noopener">
-                <img
-                  src="https://cdn.discordapp.com/attachments/752463623305297992/1176918699802906760/image04.jpg"
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
-        </Draggable>
-      ) : (
-        <></>
-      )}
-
-      {showContrast ? (
-        <Draggable
-          handle=".handle"
-          disabled={currentWidth < 1300 ? true : false}>
-          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-h-[80vh] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
-            <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
-              <div className="flex gap-2">
-                <button
-                  onClick={() => {
-                    setShowContrast(false);
-                  }}>
-                  <svg
-                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FF6862" />
-                  </svg>
-                </button>
-
-                <button
-                  onClick={() => {
-                    setShowContrast(false);
-                  }}>
-                  <svg
-                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FEBC2C" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => {
-                    setShowContrast(false);
-                  }}>
-                  <svg
-                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7.5" cy="7.5" r="7.5" fill="#2CC740" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div className="overflow-y-scroll bg-[#1e1e1eda] backdrop-blur-[100px] p-4 flex flex-col gap-6">
-              <iframe
-                className="w-full h-auto aspect-[9/16]"
-                src="https://www.youtube-nocookie.com/embed/59Fgds0scBo?si=X5TAjTuEcsrZF3SW&amp;controls=0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-              <iframe
-                className="w-full h-auto aspect-[9/16]"
-                src="https://www.youtube-nocookie.com/embed/yxcFB_xbvr8?si=X5TAjTuEcsrZF3SW&amp;controls=0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-              <iframe
-                className="w-full h-auto aspect-[9/16]"
-                src="https://www.youtube-nocookie.com/embed/RwUy-yfW6oM?si=X5TAjTuEcsrZF3SW&amp;controls=0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-              <iframe
-                className="w-full h-auto aspect-[9/16]"
-                src="https://www.youtube-nocookie.com/embed/fViVyHWhmmw?si=X5TAjTuEcsrZF3SW&amp;controls=0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-        </Draggable>
-      ) : (
-        <></>
-      )}
 
       {showPortfolio ? (
         <Draggable
@@ -709,6 +563,152 @@ export default function App() {
                 <img src={image14} alt="" />
                 <img src={image15} alt="" />
               </div>
+            </div>
+          </div>
+        </Draggable>
+      ) : (
+        <></>
+      )}
+
+      {showGoldenAge ? (
+        <Draggable
+          handle=".handle"
+          disabled={currentWidth < 1300 ? true : false}>
+          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh] max-h-[80vh]    rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
+            <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    setShowGoldenAge(false);
+                  }}>
+                  <svg
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FF6862" />
+                  </svg>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setShowGoldenAge(false);
+                  }}>
+                  <svg
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FEBC2C" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => {
+                    setShowGoldenAge(false);
+                  }}>
+                  <svg
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="7.5" r="7.5" fill="#2CC740" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="overflow-y-scroll bg-[#1e1e1eda] backdrop-blur-[100px] p-4 flex flex-col gap-6">
+              <a
+                href="https://www.instagram.com/p/CsB_FmKpmnb/"
+                target="_blank"
+                rel="noreferrer noopener">
+                <img
+                  src="https://cdn.discordapp.com/attachments/752463623305297992/1176917791564124241/image05.jpg"
+                  alt=""
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/p/CsFiNsmAwnf/"
+                target="_blank"
+                rel="noreferrer noopener">
+                <img
+                  src="https://cdn.discordapp.com/attachments/752463623305297992/1176918699802906760/image04.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </Draggable>
+      ) : (
+        <></>
+      )}
+
+      {showContrast ? (
+        <Draggable
+          handle=".handle"
+          disabled={currentWidth < 1300 ? true : false}>
+          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-h-[80vh] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
+            <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    setShowContrast(false);
+                  }}>
+                  <svg
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FF6862" />
+                  </svg>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setShowContrast(false);
+                  }}>
+                  <svg
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="7.5" r="7.5" fill="#FEBC2C" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => {
+                    setShowContrast(false);
+                  }}>
+                  <svg
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="7.5" r="7.5" fill="#2CC740" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="overflow-y-scroll bg-[#1e1e1eda] backdrop-blur-[100px] p-4 flex flex-col gap-6">
+              <iframe
+                className="w-full h-auto aspect-[9/16]"
+                src="https://www.youtube-nocookie.com/embed/59Fgds0scBo?si=X5TAjTuEcsrZF3SW&amp;controls=0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <iframe
+                className="w-full h-auto aspect-[9/16]"
+                src="https://www.youtube-nocookie.com/embed/yxcFB_xbvr8?si=X5TAjTuEcsrZF3SW&amp;controls=0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <iframe
+                className="w-full h-auto aspect-[9/16]"
+                src="https://www.youtube-nocookie.com/embed/RwUy-yfW6oM?si=X5TAjTuEcsrZF3SW&amp;controls=0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <iframe
+                className="w-full h-auto aspect-[9/16]"
+                src="https://www.youtube-nocookie.com/embed/fViVyHWhmmw?si=X5TAjTuEcsrZF3SW&amp;controls=0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
             </div>
           </div>
         </Draggable>
