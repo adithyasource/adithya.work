@@ -21,6 +21,7 @@ import image15 from "./assets/brandlogos/image 15.png";
 import Draggable from "react-draggable";
 import LinkedWork from "./components/LinkedWork";
 import EmbeddedWork from "./components/EmbeddedWork";
+import { useEffect } from "react";
 
 export default function App() {
   const [showPortfolio, setShowPortfolio] = useState(false);
@@ -30,6 +31,7 @@ export default function App() {
 
   const [showGoldenAge, setShowGoldenAge] = useState(false);
   const [showContrast, setShowContrast] = useState(false);
+  const [currentWidth, setCurrentWidth] = useState(1300);
 
   document.addEventListener("keydown", (e) => {
     if (e.key == "Escape") {
@@ -40,26 +42,46 @@ export default function App() {
     }
   });
 
+  useEffect(() => {
+    const updateWidth = () => setCurrentWidth(window.innerWidth);
+
+    updateWidth();
+
+    window.addEventListener("resize", updateWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
+  }, []);
+
   return (
     <div className="overflow-hidden w-full h-full">
       <img
         src={wallpaper}
         alt=""
-        className="absolute w-screen h-screen -z-20"
+        className="absolute w-screen h-screen -z-20 object-cover"
       />
 
-      <div className="absolute bottom-10 left-[calc(50%-128px)] flex gap-4 w-max bg-[#1b1b1b2c] px-4 py-3 rounded-[25px] backdrop-blur-[100px] border border-solid border-[#ffffff1A]">
+      <div className="absolute bottom-10 max-[1300px]:bottom-5 left-[calc(50%-128px)] max-[1300px]:left-[calc(50%-94px)] flex gap-4 w-max bg-[#1b1b1b2c] px-4 py-3  rounded-[25px] max-[1300px]:rounded-[15px]  backdrop-blur-[100px] border border-solid border-[#ffffff1A]">
         <a
           href="https://discord.com/users/427117308880748544"
           target="_blank"
           rel="noreferrer noopener">
-          <img src={discord} alt="" className="w-[64px] h-[64px]" />
+          <img
+            src={discord}
+            alt=""
+            className="w-[64px] h-[64px] max-[1300px]:w-[48px] max-[1300px]:h-[48px]"
+          />
         </a>
         <a
           href="https://www.instagram.com/sreeadithyap/"
           target="_blank"
           rel="noreferrer noopener">
-          <img src={instagram} alt="" className="w-[64px] h-[64px]" />
+          <img
+            src={instagram}
+            alt=""
+            className="w-[64px] h-[64px] max-[1300px]:w-[48px] max-[1300px]:h-[48px]"
+          />
         </a>
 
         <button
@@ -82,11 +104,15 @@ export default function App() {
             </p>
           )}
 
-          <img src={email} alt="" className="w-[64px] h-[64px] " />
+          <img
+            src={email}
+            alt=""
+            className="w-[64px] h-[64px]  max-[1300px]:w-[48px] max-[1300px]:h-[48px]"
+          />
         </button>
       </div>
 
-      <div className="flex gap-28 absolute right-72 top-48 z-[-15]">
+      <div className="flex gap-28 absolute right-72 top-48 z-[-15] max-[1300px]:right-20">
         <button
           className="flex flex-col items-center gap-2"
           onClick={() => {
@@ -107,8 +133,10 @@ export default function App() {
       </div>
 
       {showGoldenAge ? (
-        <Draggable handle=".handle">
-          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-h-[80vh] rounded-[25px] border border-solid border-[#ffffff1A] overflow-clip">
+        <Draggable
+          handle=".handle"
+          disabled={currentWidth < 1300 ? true : false}>
+          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh] max-h-[80vh]    rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
             <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
@@ -116,8 +144,7 @@ export default function App() {
                     setShowGoldenAge(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -130,8 +157,7 @@ export default function App() {
                     setShowGoldenAge(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -143,8 +169,7 @@ export default function App() {
                     setShowGoldenAge(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -180,8 +205,10 @@ export default function App() {
       )}
 
       {showContrast ? (
-        <Draggable handle=".handle">
-          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-h-[80vh] rounded-[25px] border border-solid border-[#ffffff1A] overflow-clip">
+        <Draggable
+          handle=".handle"
+          disabled={currentWidth < 1300 ? true : false}>
+          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-h-[80vh] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
             <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
@@ -189,8 +216,7 @@ export default function App() {
                     setShowContrast(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -203,8 +229,7 @@ export default function App() {
                     setShowContrast(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -216,8 +241,7 @@ export default function App() {
                     setShowContrast(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -255,17 +279,18 @@ export default function App() {
       )}
 
       {showPortfolio ? (
-        <Draggable handle=".handle">
-          <div className=" z-[-10] absolute left-[20vw] top-[4vh] flex w-[60vw] max-h-[80vh] rounded-[25px] border border-solid border-[#ffffff1A] overflow-clip ">
-            <div className="handle w-[20vw] bg-[#2c2c2cb4]  backdrop-blur-[100px] p-4 cursor-grab">
+        <Draggable
+          handle=".handle"
+          disabled={currentWidth < 1300 ? true : false}>
+          <div className=" z-[-10] absolute left-[20vw]  max-[1300px]:left-[5vw] top-[4vh] flex w-[60vw] max-[1300px]:w-[90vw] max-h-[80vh]   rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip max-[1300px]:flex-col">
+            <div className="handle w-[20vw] max-[1300px]:w-full bg-[#2c2c2cb4]  backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
                   onClick={() => {
                     setShowPortfolio(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -278,8 +303,7 @@ export default function App() {
                     setShowPortfolio(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -291,8 +315,7 @@ export default function App() {
                     setShowPortfolio(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -301,23 +324,23 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="mt-6 flex flex-col gap-2">
-                <p className="opacity-50 ">Favorites</p>
-
+              <p className="opacity-50 block max-[1300px]:hidden mt-6 mb-2">
+                Favorites
+              </p>
+              <div className="flex flex-col gap-2 max-[1300px]:mt-6 max-[1300px]:grid max-[1300px]:grid-cols-2 ">
                 <button
                   className={`${
                     currentPortfolioTab == "ads/mvs"
                       ? "bg-[#4c4c4ca4]"
                       : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 rounded-[10px]`}
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
                   onClick={() => {
                     setCurrentPortfolioTab("ads/mvs");
                   }}>
                   <p>ads / mvs</p>
 
                   <svg
-                    width="16"
-                    height="16"
+                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -334,14 +357,13 @@ export default function App() {
                     currentPortfolioTab == "showreel"
                       ? "bg-[#4c4c4ca4]"
                       : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 rounded-[10px]`}
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
                   onClick={() => {
                     setCurrentPortfolioTab("showreel");
                   }}>
                   <p>showreel.mp4</p>
                   <svg
-                    width="16"
-                    height="16"
+                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -358,15 +380,14 @@ export default function App() {
                     currentPortfolioTab == "misc"
                       ? "bg-[#4c4c4ca4]"
                       : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 rounded-[10px]`}
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
                   onClick={() => {
                     setCurrentPortfolioTab("misc");
                   }}>
                   <p>misc</p>
 
                   <svg
-                    width="16"
-                    height="16"
+                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -383,15 +404,14 @@ export default function App() {
                     currentPortfolioTab == "youtube"
                       ? "bg-[#4c4c4ca4]"
                       : "bg-transparent"
-                  } w-full flex items-center justify-between py-2 px-4 rounded-[10px]`}
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px]`}
                   onClick={() => {
                     setCurrentPortfolioTab("youtube");
                   }}>
                   <p>youtube</p>
 
                   <svg
-                    width="16"
-                    height="16"
+                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -405,7 +425,7 @@ export default function App() {
                 </button>
               </div>
             </div>
-            <div className="p-6 overflow-y-scroll bg-[#1e1e1eda] w-full backdrop-blur-[100px]">
+            <div className="p-6 max-[1300px]:p-3 overflow-y-scroll bg-[#1e1e1eda] w-full backdrop-blur-[100px]">
               {currentPortfolioTab == "ads/mvs" ? (
                 <div className="flex flex-col gap-8">
                   <LinkedWork
@@ -438,7 +458,7 @@ export default function App() {
                         setShowGoldenAge(true);
                       }}>
                       <img
-                        className="w-[43vw]"
+                        className="w-[43vw] max-[1300px]:w-full"
                         src="https://cdn.discordapp.com/attachments/752463623305297992/1125793726153891890/satoumilk_XT304508_2023-05-13_12.31.26_1.jpg"
                       />
                     </button>
@@ -464,7 +484,7 @@ export default function App() {
                         setShowContrast(true);
                       }}>
                       <img
-                        className="w-[43vw]"
+                        className="w-[43vw] max-[1300px]:w-full"
                         src="https://i.ytimg.com/vi/xbiPDERu-uo/maxresdefault.jpg"
                       />
                     </button>
@@ -606,8 +626,10 @@ export default function App() {
       )}
 
       {showAbout ? (
-        <Draggable handle=".handle">
-          <div className=" h-max  z-[1000]  absolute left-[35vw] top-[30vh] flex flex-col w-[28vw] rounded-[25px] border border-solid border-[#ffffff1A] overflow-clip">
+        <Draggable
+          handle=".handle"
+          disabled={currentWidth < 1300 ? true : false}>
+          <div className=" h-max  z-[1000]  absolute left-[35vw] max-[1300px]:left-[10vw] top-[30vh] max-[1300px]:top-[10vh] flex flex-col w-[28vw] max-[1300px]:w-[80vw]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
             <div className="handle h-[4vh] bg-[#2c2c2cb4] items-center relative flex backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
@@ -615,8 +637,7 @@ export default function App() {
                     setShowAbout(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -629,8 +650,7 @@ export default function App() {
                     setShowAbout(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -642,8 +662,7 @@ export default function App() {
                     setShowAbout(false);
                   }}>
                   <svg
-                    width="14"
-                    height="14"
+                    className="w-[14px] h-[14px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -656,11 +675,26 @@ export default function App() {
                 about me.txt
               </p>
             </div>
-            <div className="bg-[#1e1e1eda] w-full h-full backdrop-blur-[100px] p-4 flex flex-col gap-10">
+            <div className="bg-[#1e1e1eda] w-full h-full max-[1300px]:h-max max-[1300px]:justify-between  backdrop-blur-[100px] p-4 flex flex-col gap-10">
               <p>
                 hey! i’m sree adithya and i create things on the web ~ currently
                 editing videos for brands and youtubers, available for taking on
-                projects ^-^ email me@adithya.work
+                projects ^-^ email{" "}
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText("me@adithya.work");
+                    setShowSuccessfulCopy(true);
+
+                    setTimeout(() => {
+                      setShowSuccessfulCopy(false);
+                    }, 800);
+                  }}>
+                  {showSuccessfulCopy ? (
+                    <p className="underline">copied</p>
+                  ) : (
+                    <p className="underline">me@adithya.work</p>
+                  )}
+                </button>
               </p>
 
               <div className="flex flex-wrap gap-3">

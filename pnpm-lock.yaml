@@ -11,18 +11,12 @@ dependencies:
   react:
     specifier: ^18.2.0
     version: 18.2.0
-  react-copy-mailto:
-    specifier: ^1.1.1
-    version: 1.1.1(react-dom@18.2.0)(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   react-draggable:
     specifier: ^4.4.6
     version: 4.4.6(react-dom@18.2.0)(react@18.2.0)
-  react-hint:
-    specifier: ^3.2.1
-    version: 3.2.1
 
 devDependencies:
   '@types/react':
@@ -2293,16 +2287,6 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-copy-mailto@1.1.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-jt0l/cVDAXgItdIxr+okjwVWz9jUQhalDjSJHFUd8MPSEpgkItmyZQ9zPHR4ooWMAO5hZYr7OwIt/bLqwkM3gA==}
-    peerDependencies:
-      react: ^16.8.0
-      react-dom: ^16.8.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
   /react-dom@18.2.0(react@18.2.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -2323,10 +2307,6 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /react-hint@3.2.1:
-    resolution: {integrity: sha512-kQgH64w8xil47NdMvh87QADj91xeKhO5ZmzQJJ9iT9PqL4K1/ggGrdeIiUnCLpZH3RP0nAWtFWPe4VQG9bzCtg==}
     dev: false
 
   /react-is@16.13.1:

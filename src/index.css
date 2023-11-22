@@ -5,6 +5,7 @@
 * {
   color: white;
   font-family: Helvetica, Arial, sans-serif;
+  @apply max-[1300px]:text-[12px];
 }
 
 .hover-image-play {

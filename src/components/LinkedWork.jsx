@@ -8,7 +8,7 @@ export default function LinkedWork(props) {
         target="_blank"
         rel="noopener noreferrer">
         <img
-          className="w-[43vw]"
+          className="w-[43vw] max-[1300px]:w-full"
           src={`https://i.ytimg.com/vi/${props.thumbId}/maxresdefault.jpg`}
         />
       </a>
