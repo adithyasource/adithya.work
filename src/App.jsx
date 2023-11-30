@@ -55,14 +55,14 @@ export default function App() {
   }, []);
 
   return (
-    <div className="overflow-hidden w-full h-full">
+    <div className="overflow-clip">
       <img
         src={wallpaper}
         alt=""
         className="absolute w-screen h-screen -z-20 object-cover"
       />
 
-      <div className="absolute bottom-10 max-[1300px]:bottom-5 left-[calc(50%-128px)] max-[1300px]:left-[calc(50%-94px)] flex gap-4 w-max bg-[#1b1b1b2c] px-4 py-3  rounded-[25px] max-[1300px]:rounded-[15px]  backdrop-blur-[100px] border border-solid border-[#ffffff1A]">
+      <div className="absolute  bottom-10 max-[1300px]:bottom-5 left-[calc(50%-128px)] max-[1300px]:left-[calc(50%-94px)] flex gap-4 w-max bg-[#1b1b1b2c] px-4 py-3  rounded-[25px] max-[1300px]:rounded-[15px]  backdrop-blur-[100px] border border-solid border-[#ffffff1A]">
         <a
           href="https://discord.com/users/427117308880748544"
           target="_blank"
@@ -163,7 +163,7 @@ export default function App() {
         <Draggable
           handle=".handle"
           disabled={currentWidth < 1300 ? true : false}>
-          <div className=" z-[-10] absolute left-[20vw]  max-[1300px]:left-[5vw] top-[4vh] flex w-[60vw] max-[1300px]:w-[90vw] max-h-[80vh]   rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip max-[1300px]:flex-col">
+          <div className=" shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] z-[-10] absolute left-[20vw]  max-[1300px]:left-[5vw] top-[4vh] flex w-[60vw] max-[1300px]:w-[90vw] max-h-[80vh]   rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip max-[1300px]:flex-col">
             <div className="handle w-[20vw] max-[1300px]:w-full bg-[#2c2c2cb4]  backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
@@ -510,8 +510,8 @@ export default function App() {
         <Draggable
           handle=".handle"
           disabled={currentWidth < 1300 ? true : false}>
-          <div className=" h-max  z-[1000]  absolute left-[35vw] max-[1300px]:left-[10vw] top-[30vh] max-[1300px]:top-[10vh] flex flex-col w-[28vw] max-[1300px]:w-[80vw]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
-            <div className="handle h-[4vh] bg-[#2c2c2cb4] items-center relative flex backdrop-blur-[100px] p-4 cursor-grab">
+          <div className=" h-max shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] z-[1000]  absolute left-[35vw] max-[1300px]:left-[10vw] top-[30vh] max-[1300px]:top-[10vh] flex flex-col w-[28vw] max-[1300px]:w-[80vw]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
+            <div className="handle    h-[4vh] bg-[#2c2c2cb4] items-center relative flex backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
                   onClick={() => {
@@ -558,9 +558,8 @@ export default function App() {
             </div>
             <div className="bg-[#1e1e1eda] w-full h-full max-[1300px]:h-max max-[1300px]:justify-between  backdrop-blur-[100px] p-4 flex flex-col gap-10">
               <p>
-                hey! i’m sree adithya and i create things on the web ~ currently
-                editing videos for brands and youtubers, available for taking on
-                projects ^-^ email{" "}
+                hey! i’m adithya and i currently edit videos for brands and
+                youtubers. email{" "}
                 <button
                   onClick={() => {
                     navigator.clipboard.writeText("me@adithya.work");
