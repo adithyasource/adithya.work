@@ -340,7 +340,7 @@ export default function App() {
                       }}>
                       <img
                         className="w-[43vw] max-[1300px]:w-full"
-                        src="https://cdn.discordapp.com/attachments/752463623305297992/1125793726153891890/satoumilk_XT304508_2023-05-13_12.31.26_1.jpg"
+                        src="https://i.ibb.co/D4kbtDK/satoumilk-XT304508-2023-05-13-12-31-26-1.jpg"
                       />
                     </button>
                     <i>GOLDENAGE.JP 黄金時代 Brand Creatives</i>
@@ -647,19 +647,13 @@ export default function App() {
                 href="https://www.instagram.com/p/CsB_FmKpmnb/"
                 target="_blank"
                 rel="noreferrer noopener">
-                <img
-                  src="https://cdn.discordapp.com/attachments/752463623305297992/1176917791564124241/image05.jpg"
-                  alt=""
-                />
+                <img src="https://i.ibb.co/yNrqC8q/image05.jpg" alt="" />
               </a>
               <a
                 href="https://www.instagram.com/p/CsFiNsmAwnf/"
                 target="_blank"
                 rel="noreferrer noopener">
-                <img
-                  src="https://cdn.discordapp.com/attachments/752463623305297992/1176918699802906760/image04.jpg"
-                  alt=""
-                />
+                <img src="https://i.ibb.co/MD2jwSx/image04.jpg" alt="" />
               </a>
             </div>
           </div>
