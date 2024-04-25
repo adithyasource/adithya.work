@@ -235,6 +235,30 @@ export default function App() {
                 </button>
                 <button
                   className={`${
+                    currentPortfolioTab == "youtube"
+                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
+                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
+                  onClick={() => {
+                    setCurrentPortfolioTab("youtube");
+                  }}>
+                  <p>youtube</p>
+
+                  <svg
+                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4 21H20C21.1046 21 22 20.1046 22 19V8C22 6.89543 21.1046 6 20 6H11L9.29687 3.4453C9.1114 3.1671 8.79917 3 8.46482 3H4C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21Z"
+                      stroke="#ffffff"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"></path>
+                  </svg>
+                </button>
+                <button
+                  className={`${
                     currentPortfolioTab == "showreel"
                       ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
                       : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
@@ -256,6 +280,7 @@ export default function App() {
                       strokeLinejoin="round"></path>
                   </svg>
                 </button>
+
                 <button
                   className={`${
                     currentPortfolioTab == "misc"
@@ -280,41 +305,18 @@ export default function App() {
                       strokeLinejoin="round"></path>
                   </svg>
                 </button>
-                <button
-                  className={`${
-                    currentPortfolioTab == "youtube"
-                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
-                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
-                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
-                  onClick={() => {
-                    setCurrentPortfolioTab("youtube");
-                  }}>
-                  <p>youtube</p>
-
-                  <svg
-                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4 21H20C21.1046 21 22 20.1046 22 19V8C22 6.89543 21.1046 6 20 6H11L9.29687 3.4453C9.1114 3.1671 8.79917 3 8.46482 3H4C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21Z"
-                      stroke="#ffffff"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"></path>
-                  </svg>
-                </button>
               </div>
             </div>
             <div className="p-6 max-[1300px]:p-3 overflow-y-scroll bg-[#1e1e1eda] w-full backdrop-blur-[100px]">
               {currentPortfolioTab == "ads/mvs" ? (
                 <div className="flex flex-col gap-8">
-                  <LinkedWork
-                    vidId="dF5wKgA_fDM"
-                    thumbId="5QzQHY2emqU"
-                    title="Travis Scott & Quavo - Go (Limbow Flip)"
-                    desc=""
+                  <EmbeddedWork
+                    vidId="PtFClCgIQZ0"
+                    thumbId="PtFClCgIQZ0"
+                    title="Cradle Wallet Hype Video"
+                    desc="An animated hype video showcasing the Cradle Wallet's gamer centric features. Consists of a large amount of motion graphics along with 3d camera animation."
                   />
+
                   <EmbeddedWork
                     vidId="I3xWnr1sgwQ"
                     thumbId="I3xWnr1sgwQ"
@@ -336,32 +338,6 @@ export default function App() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => {
-                        setShowGoldenAge(true);
-                      }}>
-                      <img
-                        className="w-[43vw] max-[1300px]:w-full"
-                        src="https://i.ibb.co/D4kbtDK/satoumilk-XT304508-2023-05-13-12-31-26-1.jpg"
-                      />
-                    </button>
-                    <i>GOLDENAGE.JP 黄金時代 Brand Creatives</i>
-                    <p>
-                      A set of highly stylized instagram reels for GOLDENAGE, a
-                      Japanese anime streetwear clothing brand.
-                    </p>
-                  </div>
-
-                  <EmbeddedWork
-                    vidId="PtFClCgIQZ0"
-                    thumbId="PtFClCgIQZ0"
-                    title="Cradle Wallet Hype Video"
-                    desc="An animated hype video showcasing the Cradle Wallet's gamer centric features. Consists of a large amount of motion graphics along with 3d camera animation."
-                  />
-
-                  <div className="flex flex-col gap-2">
-                    <button
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
                         setShowContrast(true);
                       }}>
                       <img
@@ -373,6 +349,32 @@ export default function App() {
                     <p>
                       Graphic posters turned into aesthetic, short and engaging
                       motion videos. Made in collaboration with GIPHME™
+                    </p>
+                  </div>
+
+                  <LinkedWork
+                    vidId="dF5wKgA_fDM"
+                    thumbId="5QzQHY2emqU"
+                    title="Travis Scott & Quavo - Go (Limbow Flip)"
+                    desc=""
+                  />
+
+                  <div className="flex flex-col gap-2">
+                    <button
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        setShowGoldenAge(true);
+                      }}>
+                      <img
+                        className="w-[43vw] max-[1300px]:w-full"
+                        src="https://i.ibb.co/D4kbtDK/satoumilk-XT304508-2023-05-13-12-31-26-1.jpg"
+                      />
+                    </button>
+                    <i>GOLDENAGE.JP 黄金時代 Brand Creatives</i>
+                    <p>
+                      A set of highly stylized instagram reels for GOLDENAGE, a
+                      Japanese anime streetwear clothing brand.
                     </p>
                   </div>
 
