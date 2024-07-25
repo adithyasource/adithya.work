@@ -7,6 +7,8 @@ import instagram from "./assets/instagram.svg";
 import email from "./assets/email.svg";
 import files from "./assets/files.svg";
 import page from "./assets/page.svg";
+import folder from "./assets/folder.svg";
+import play from "./assets/play.svg";
 
 import image6 from "./assets/brandlogos/image 6.png";
 import image7 from "./assets/brandlogos/image 7.png";
@@ -19,6 +21,9 @@ import image13 from "./assets/brandlogos/image 13.png";
 import image14 from "./assets/brandlogos/image 14.png";
 import image15 from "./assets/brandlogos/image 15.png";
 
+import goldenageSkurrr from "./assets/thumbnails/GOLDENAGE - skurrr.png";
+import goldenageTokyopill from "./assets/thumbnails/GOLDENAGE - tokyopill.png";
+
 import LinkedWork from "./components/LinkedWork";
 import EmbeddedWork from "./components/EmbeddedWork";
 
@@ -30,7 +35,7 @@ export default function App() {
   const [showGoldenAge, setShowGoldenAge] = useState(false);
   const [showContrast, setShowContrast] = useState(false);
 
-  const [currentPortfolioTab, setCurrentPortfolioTab] = useState("ads/mvs");
+  const [currentPortfolioTab, setCurrentPortfolioTab] = useState("adverts");
   const [currentWidth, setCurrentWidth] = useState(1300);
 
   document.addEventListener("keydown", (e) => {
@@ -99,7 +104,7 @@ export default function App() {
         <button
           className="group relative hover:scale-[103%] duration-100"
           onClick={() => {
-            navigator.clipboard.writeText("me@adithya.work");
+            navigator.clipboard.writeText("sreeadithyap@gmail.com");
             setShowSuccessfulCopy(true);
 
             setTimeout(() => {
@@ -111,8 +116,8 @@ export default function App() {
               copied
             </p>
           ) : (
-            <p className="hidden group-hover:block absolute top-[-55px] left-[-40px] bg-[#1b1b1b2c] px-3 py-1 rounded-[6px] backdrop-blur-[10px] border border-solid border-[#ffffff1A] z-[1000] w-max">
-              me@adithya.work
+            <p className="hidden group-hover:block absolute top-[-55px] left-[-65px] bg-[#1b1b1b2c] px-3 py-1 rounded-[6px] backdrop-blur-[10px] border border-solid border-[#ffffff1A] z-[1000] w-max">
+              sreeadithyap@gmail.com
             </p>
           )}
 
@@ -134,7 +139,7 @@ export default function App() {
           className="relative flex flex-col items-center gap-2 hover:scale-[103%] duration-100"
           onClick={() => {
             setShowPortfolio(true);
-            setCurrentPortfolioTab("ads/mvs");
+            setCurrentPortfolioTab("adverts");
           }}>
           <img src={files} alt="" className=" h-28" />
           <img
@@ -211,27 +216,35 @@ export default function App() {
               <div className="flex flex-col gap-2 max-[1300px]:mt-6 max-[1300px]:grid max-[1300px]:grid-cols-2 ">
                 <button
                   className={`${
-                    currentPortfolioTab == "ads/mvs"
+                    currentPortfolioTab == "adverts"
                       ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
                       : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
                   } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
                   onClick={() => {
-                    setCurrentPortfolioTab("ads/mvs");
+                    setCurrentPortfolioTab("adverts");
                   }}>
-                  <p>ads / mvs</p>
+                  <p>adverts</p>
 
-                  <svg
+                  <img
+                    src={folder}
                     className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4 21H20C21.1046 21 22 20.1046 22 19V8C22 6.89543 21.1046 6 20 6H11L9.29687 3.4453C9.1114 3.1671 8.79917 3 8.46482 3H4C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21Z"
-                      stroke="#ffffff"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"></path>
-                  </svg>
+                  />
+                </button>
+                <button
+                  className={`${
+                    currentPortfolioTab == "music videos"
+                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
+                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
+                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
+                  onClick={() => {
+                    setCurrentPortfolioTab("music videos");
+                  }}>
+                  <p>music videos</p>
+
+                  <img
+                    src={folder}
+                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
+                  />
                 </button>
                 <button
                   className={`${
@@ -244,18 +257,10 @@ export default function App() {
                   }}>
                   <p>youtube</p>
 
-                  <svg
+                  <img
+                    src={folder}
                     className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4 21H20C21.1046 21 22 20.1046 22 19V8C22 6.89543 21.1046 6 20 6H11L9.29687 3.4453C9.1114 3.1671 8.79917 3 8.46482 3H4C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21Z"
-                      stroke="#ffffff"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"></path>
-                  </svg>
+                  />
                 </button>
                 <button
                   className={`${
@@ -267,49 +272,49 @@ export default function App() {
                     setCurrentPortfolioTab("showreel");
                   }}>
                   <p>showreel.mp4</p>
-                  <svg
+                  <img
+                    src={play}
                     className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M5 21V3L19 12L5 21Z"
-                      stroke="#ffffff"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"></path>
-                  </svg>
-                </button>
-
-                <button
-                  className={`${
-                    currentPortfolioTab == "misc"
-                      ? "bg-[#4c4c4ca4] hover:bg-[#4c4c4c] duration-150"
-                      : "bg-transparent hover:bg-[#4c4c4c4d] duration-150"
-                  } w-full flex items-center justify-between py-2 px-4 max-[1300px]:py-2 rounded-[10px] `}
-                  onClick={() => {
-                    setCurrentPortfolioTab("misc");
-                  }}>
-                  <p>misc</p>
-
-                  <svg
-                    className="w-[16px] h-[16px] max-[1300px]:w-[12px] max-[1300px]:h-[12px]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4 21H20C21.1046 21 22 20.1046 22 19V8C22 6.89543 21.1046 6 20 6H11L9.29687 3.4453C9.1114 3.1671 8.79917 3 8.46482 3H4C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21Z"
-                      stroke="#ffffff"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"></path>
-                  </svg>
+                  />
                 </button>
               </div>
             </div>
             <div className="p-6 max-[1300px]:p-3 overflow-y-scroll bg-[#1e1e1eda] w-full backdrop-blur-[100px]">
-              {currentPortfolioTab == "ads/mvs" ? (
+              {currentPortfolioTab == "adverts" ? (
                 <div className="flex flex-col gap-8">
+                  <EmbeddedWork
+                    vidId="c9boWLlib7Q"
+                    thumbId="OS4R6F644UE"
+                    title="koldkid™ advert"
+                    desc="Mixed media style advert for koldkid™, a streetwear clothing brand, utilizing multi-media clips from anime, music videos and product footage."
+                  />
+
+                  <div className="flex flex-col gap-2">
+                    <button
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        setShowGoldenAge(true);
+                      }}>
+                      <img
+                        className="w-[43vw] max-[1300px]:w-full"
+                        src="https://i.ibb.co/D4kbtDK/satoumilk-XT304508-2023-05-13-12-31-26-1.jpg"
+                      />
+                    </button>
+                    <i>GOLDENAGE.JP 黄金時代 Brand Creatives</i>
+                    <p>
+                      A set of highly stylized instagram reels for GOLDENAGE, a
+                      Japanese anime streetwear clothing brand.
+                    </p>
+                  </div>
+
+                  <EmbeddedWork
+                    vidId="8K50PqgO0S4"
+                    thumbId="8K50PqgO0S4"
+                    title="clear - launch video"
+                    desc="The launch video for clear - a video game library for windows. Uses designs from the Figma files and showcases the app's user interface in a clean and aesthetic way."
+                  />
+
                   <EmbeddedWork
                     vidId="PtFClCgIQZ0"
                     thumbId="PtFClCgIQZ0"
@@ -325,11 +330,7 @@ export default function App() {
                             My edit for the streetwear brand <a href='https://www.illvzn.com/' target='_blank' rel='noopener
                               noreferrer'>ILLVZN</a> X <a href='https://www.onlytheblind.com/' target='_blank' rel='noopener
                               noreferrer'>ONLYTHEBLIND</a> collab promo video, hosted by <a href='https://www.youtube.com/user/TBJZL'
-                              target='_blank' rel='noopener noreferrer'>TBJZL</a> and Konstantin. <br />
-                            Filled with simple yet effective effects leading to bigger sequences of absolute eye candy. <br />
-                            Edit/VFX: Me <br />
-                            Director/Videographer: <a href='https://www.youtube.com/channel/UChKVhjGmPAu7eWa2ITDd50w' target='_blank'
-                              rel='noopener noreferrer'>Konstantin</a> <br />
+                              target='_blank' rel='noopener noreferrer'>TBJZL</a> and Konstantin. 
                           </div>"
                   />
 
@@ -352,6 +353,19 @@ export default function App() {
                     </p>
                   </div>
 
+                  <EmbeddedWork
+                    vidId="iFXZUAONLEI"
+                    thumbId="iFXZUAONLEI"
+                    title="BLACKBIRN© - GAS COL."
+                    desc=""
+                  />
+                </div>
+              ) : (
+                <></>
+              )}
+
+              {currentPortfolioTab == "music videos" ? (
+                <div className="flex flex-col gap-8">
                   <LinkedWork
                     vidId="dF5wKgA_fDM"
                     thumbId="5QzQHY2emqU"
@@ -359,36 +373,70 @@ export default function App() {
                     desc=""
                   />
 
-                  <div className="flex flex-col gap-2">
-                    <button
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                        setShowGoldenAge(true);
-                      }}>
-                      <img
-                        className="w-[43vw] max-[1300px]:w-full"
-                        src="https://i.ibb.co/D4kbtDK/satoumilk-XT304508-2023-05-13-12-31-26-1.jpg"
-                      />
-                    </button>
-                    <i>GOLDENAGE.JP 黄金時代 Brand Creatives</i>
-                    <p>
-                      A set of highly stylized instagram reels for GOLDENAGE, a
-                      Japanese anime streetwear clothing brand.
-                    </p>
-                  </div>
-
                   <LinkedWork
                     vidId="ZvW2x-VC7-o"
                     thumbId="ZvW2x-VC7-o"
                     title="Trippie Redd - Miss The Rage ft. Playboi Carti (Pozy Remix)"
                     desc=""
                   />
-                  <EmbeddedWork
-                    vidId="iFXZUAONLEI"
-                    thumbId="iFXZUAONLEI"
-                    title="BLACKBIRN© - GAS COL."
+
+                  <LinkedWork
+                    vidId="B9Eg0R0elkc"
+                    thumbId="B9Eg0R0elkc"
+                    title="Fabian Mazur x Snavs - The Pit (Music Video)"
                     desc=""
+                  />
+
+                  <LinkedWork
+                    vidId="hcZpa4DLSFQ"
+                    thumbId="gXPSfde9YZU"
+                    title="Tommee Profitt - In The End ft. Fleurie (Emurse Remix)"
+                    desc=""
+                  />
+
+                  <LinkedWork
+                    vidId="9RriQbnddsw"
+                    thumbId="9RriQbnddsw"
+                    title="HIGHSOCIETY - Visions"
+                    desc=""
+                  />
+
+                  <EmbeddedWork
+                    vidId="ulx3ttQ4IHE"
+                    thumbId="ulx3ttQ4IHE"
+                    title="Sui Generis - North Hills"
+                    desc=""
+                  />
+
+                  <LinkedWork
+                    vidId="WYR_rk8pPW4"
+                    thumbId="WYR_rk8pPW4"
+                    title="Kosfinger - Around The World / Lalala (Drill Remix)"
+                    desc=""
+                  />
+
+                  <LinkedWork
+                    vidId="6XgIMpeO-8w"
+                    thumbId="6XgIMpeO-8w"
+                    title="Onderkoffer - Purge (Official Visualizer)"
+                    desc="<div>
+                            A gritty-fast paced visualizer for Onderkoffer's latest remix- PURGE. <br />
+                            background visuals by me <br />
+                            3d animation by <a href='https://www.instagram.com/madebyjohnkho/' target='_blank' rel='noopener noreferrer'>@madebyjohnkho</a>
+                          </div>"
+                  />
+
+                  <LinkedWork
+                    vidId="mHb_f6OdJmw"
+                    thumbId="mHb_f6OdJmw"
+                    title="Attack on Titan 「AMV」 - The Rumbling (Onderkoffer Trap Remix)"
+                    desc="<div>
+                          An anime music video edited in collaboration with <a href='https://www.instagram.com/theforestname/' target='_blank'
+                            rel='noopener noreferrer'>@theforestname</a>. Original remix by <a href='https://www.instagram.com/onderkoffer/'
+                            target='_blank' rel='noopener noreferrer'>Onderkoffer</a>. Commissioned by <a
+                            href='https://www.youtube.com/trapcity' target='_blank' rel='noopener noreferrer'>TrapCity</a>
+                          Made under an extremely tight timeline in order to release it in under 24 hours of S4 Part 2 being released.
+                        </div>"
                   />
                 </div>
               ) : (
@@ -407,64 +455,7 @@ export default function App() {
               ) : (
                 <></>
               )}
-              {currentPortfolioTab == "misc" ? (
-                <div className="flex flex-col gap-8">
-                  <LinkedWork
-                    vidId="hcZpa4DLSFQ"
-                    thumbId="gXPSfde9YZU"
-                    title="Tommee Profitt - In The End ft. Fleurie (Emurse Remix)"
-                    desc=""
-                  />
-                  <LinkedWork
-                    vidId="9RriQbnddsw"
-                    thumbId="9RriQbnddsw"
-                    title="HIGHSOCIETY - Visions"
-                    desc=""
-                  />
-                  <EmbeddedWork
-                    vidId="ulx3ttQ4IHE"
-                    thumbId="ulx3ttQ4IHE"
-                    title="Sui Generis - North Hills"
-                    desc=""
-                  />
-                  <LinkedWork
-                    vidId="B9Eg0R0elkc"
-                    thumbId="B9Eg0R0elkc"
-                    title="Fabian Mazur x Snavs - The Pit (Music Video)"
-                    desc=""
-                  />
-                  <LinkedWork
-                    vidId="WYR_rk8pPW4"
-                    thumbId="WYR_rk8pPW4"
-                    title="Kosfinger - Around The World / Lalala (Drill Remix)"
-                    desc=""
-                  />
-                  <LinkedWork
-                    vidId="6XgIMpeO-8w"
-                    thumbId="6XgIMpeO-8w"
-                    title="Onderkoffer - Purge (Official Visualizer)"
-                    desc="<div>
-                            A gritty-fast paced visualizer for Onderkoffer's latest remix- PURGE. <br />
-                            background visuals by me <br />
-                            3d animation by <a href='https://www.instagram.com/madebyjohnkho/' target='_blank' rel='noopener noreferrer'>@madebyjohnkho</a>
-                          </div>"
-                  />
-                  <LinkedWork
-                    vidId="mHb_f6OdJmw"
-                    thumbId="mHb_f6OdJmw"
-                    title="Attack on Titan 「AMV」 - The Rumbling (Onderkoffer Trap Remix)"
-                    desc="<div>
-                          An anime music video edited in collaboration with <a href='https://www.instagram.com/theforestname/' target='_blank'
-                            rel='noopener noreferrer'>@theforestname</a>. Original remix by <a href='https://www.instagram.com/onderkoffer/'
-                            target='_blank' rel='noopener noreferrer'>Onderkoffer</a>. Commissioned by <a
-                            href='https://www.youtube.com/trapcity' target='_blank' rel='noopener noreferrer'>TrapCity</a>
-                          Made under an extremely tight timeline in order to release it in under 24 hours of S4 Part 2 being released.
-                        </div>"
-                  />
-                </div>
-              ) : (
-                <></>
-              )}
+
               {currentPortfolioTab == "youtube" ? (
                 <div className="flex flex-col gap-8">
                   <LinkedWork
@@ -560,11 +551,11 @@ export default function App() {
             </div>
             <div className="bg-[#1e1e1eda] w-full h-full max-[1300px]:h-max max-[1300px]:justify-between  backdrop-blur-[100px] p-4 flex flex-col gap-10">
               <p>
-                hey! i’m adithya and i currently edit videos for brands and
-                youtubers. email{" "}
+                hey! i{"'"}m adithya and i currently edit videos for brands and
+                youtubers. email:{" "}
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText("me@adithya.work");
+                    navigator.clipboard.writeText("sreeadithyap@gmail.com");
                     setShowSuccessfulCopy(true);
 
                     setTimeout(() => {
@@ -574,7 +565,7 @@ export default function App() {
                   {showSuccessfulCopy ? (
                     <p className="underline">copied</p>
                   ) : (
-                    <p className="underline">me@adithya.work</p>
+                    <p className="underline">sreeadithyap@gmail.com</p>
                   )}
                 </button>
               </p>
@@ -602,7 +593,7 @@ export default function App() {
         <Draggable
           handle=".handle"
           disabled={currentWidth < 1300 ? true : false}>
-          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh] max-h-[80vh]    rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
+          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[25vw] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh] max-h-[80vh]    rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
             <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
@@ -649,13 +640,13 @@ export default function App() {
                 href="https://www.instagram.com/p/CsB_FmKpmnb/"
                 target="_blank"
                 rel="noreferrer noopener">
-                <img src="https://i.ibb.co/yNrqC8q/image05.jpg" alt="" />
+                <img src={goldenageTokyopill} alt="" />
               </a>
               <a
-                href="https://www.instagram.com/p/CsFiNsmAwnf/"
+                href="https://www.youtube.com/watch?v=eCEjsJcghyo"
                 target="_blank"
                 rel="noreferrer noopener">
-                <img src="https://i.ibb.co/MD2jwSx/image04.jpg" alt="" />
+                <img src={goldenageSkurrr} alt="" />
               </a>
             </div>
           </div>
@@ -668,7 +659,7 @@ export default function App() {
         <Draggable
           handle=".handle"
           disabled={currentWidth < 1300 ? true : false}>
-          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[20vw] max-h-[80vh] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
+          <div className=" z-[-5] absolute left-[20vw] top-[4vh] flex flex-col w-[25vw] max-h-[80vh] max-[1300px]:w-[60vw] max-[1300px]:max-h-[70vh]  rounded-[25px] max-[1300px]:rounded-[15px]  border border-solid border-[#ffffff1A] overflow-clip">
             <div className="handle h-[4vh] items-center bg-[#2c2c2cb4] flex backdrop-blur-[100px] p-4 cursor-grab">
               <div className="flex gap-2">
                 <button
